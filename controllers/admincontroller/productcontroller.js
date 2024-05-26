@@ -1,4 +1,3 @@
-const { getEventListeners } = require('events');
 const con = require('../../config/database');
 const fs = require('fs');
 
@@ -67,8 +66,25 @@ const DeleteProduct = (req, res) =>{
 }
 
 const EditDataProduct = (req, res) =>{
-    res.redirect('/addproduct');
+    con.query('SELECT * FROM `tbl_product` WHERE id = ?', [req.params.id], (err, result) =>{
+        if(err){
+            console.log(err);
+        }
+        else{
+            // console.log(result);
+            res.redirect('/formeditproduct');
+        }
+    })
 }
+
+const FormEditProduct = (req, res) =>{
+    res.render('./adminview/formeditproduct');
+}
+
+// const UpdateProduct = (req, res) =>{
+//     let file = req.files;
+//     res.redirect('/product');
+// }
 
 module.exports = {
     DataProduct,
@@ -76,4 +92,6 @@ module.exports = {
     GetDataProduct,
     DeleteProduct,
     EditDataProduct,
+    FormEditProduct,
+    // UpdateProduct,
 };
