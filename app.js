@@ -1,8 +1,14 @@
 const express = require('express');
 const upload = require('express-fileupload');
-const routeadmin = require('./routes/adminroute/homeroute');
-const routeuser = require('./routes/userroute/homeroute');
-const routeproduct = require('./routes/adminroute/productroute');
+const dotenv = require('dotenv');
+dotenv.config({ path : './.env' });
+
+// export admin
+const homepageadmin = require('./routes/adminroute/homeroute');
+const PageProduct = require('./routes/adminroute/productroute');
+
+// export user
+const homepageuser = require('./routes/userroute/homeroute');
 
 const app = express();
 
@@ -19,11 +25,11 @@ app.use(express.urlencoded({extended : true}));
 app.use(upload());
 
 //admin
-app.use(routeadmin);
-app.use(routeproduct);
+app.use(homepageadmin);
+app.use(PageProduct);
 
-//uder
-app.use(routeuser)
+//user
+app.use(homepageuser);
 
 
-app.listen(3000);
+app.listen(process.env.PORT);

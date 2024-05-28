@@ -315,7 +315,7 @@
                     </p>
                     <span style="width: 100%; display: flex; justify-content: end; margin-bottom: 5px;">
                         <button style="border: none; padding: 5px 15px; background-color: rgba(39, 165, 165, 0.845); border-radius: 5px; box-shadow: 0px 0px 10px 1px rgba(128, 128, 128, 0.593);">
-                            <a href="/addproduct" style="text-decoration: none; font-family: roboto; font-weight: 600; color: #fff;">Add Product</a>
+                            <a href="/buttoncreateproduct" style="text-decoration: none; font-family: roboto; font-weight: 600; color: #fff;">Add Product</a>
                         </button>
                     </span>
                     <!-- DataTales Example -->    
@@ -347,29 +347,7 @@
                                         </tr>
                                     </tfoot>
                                     <tbody>
-                                        <% result.forEach(val =>{ %>
-                                            <tr>
-                                                <td><%= val.id %></td>
-                                                <td><%= val.product_name %></td>
-                                                <td><%= val.discription %></td>
-                                                <td><%= val.price %></td>
-                                                <td>
-                                                    <img src="../adminpublic/img/<%= val.image %>" alt="" width="50px">
-                                                </td>
-                                                <td>
-                                                    <button style="border: none; padding: 2px 20px; background-color: rgba(4, 204, 137, 0.707); border-radius: 5px;">
-                                                        <a href="/editproduct/<%= val.id %>" style="text-decoration: none; color: #fff; font-family: roboto; font-weight: 600;">
-                                                            Edit
-                                                        </a>
-                                                    </button>
-                                                    <button style="border: none; padding: 2px 15px; background-color: rgba(159, 3, 3, 0.788); border-radius: 5px;">
-                                                        <a href="/deleteproduct/<%= val.id %>" style="text-decoration: none; color: #fff; font-family: roboto; font-weight: 600;">
-                                                            Delete
-                                                        </a>
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                        <% }) %>
+                                        
                                     </tbody>
                                 </table>
                             </div>

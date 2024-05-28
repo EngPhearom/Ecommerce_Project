@@ -309,16 +309,15 @@
                                 <h6 class="m-0 font-weight-bold text-primary">Product</h6>
                             </div>
                             <div class="card-body">
-                                <form class="user">
-                                    
+                                <form class="user" action="/updateproduct/<%= result[0].id %>" method="post" enctype="multipart/form-data">
                                     <div class="form-group">
-                                        <input type="text" name="panme" class="form-control form-control-user" aria-describedby="" placeholder="Product Name">
+                                        <input type="text" name="panme" value="<%= result[0].product_name %>" class="form-control form-control-user" aria-describedby="" placeholder="Product Name">
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" name="dis" class="form-control form-control-user" aria-describedby="" placeholder="Discription">
+                                        <input type="text" name="dis" value="<%= result[0].discription%>" class="form-control form-control-user" aria-describedby="" placeholder="Discription">
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" name="price" class="form-control form-control-user" aria-describedby="" placeholder="Price">
+                                        <input type="text" name="price" value="<%= result[0].price %>" class="form-control form-control-user" aria-describedby="" placeholder="Price">
                                     </div>
                                     <div class="form-group">
                                         <input type="file" name="file">

@@ -1,10 +1,10 @@
 const mysql = require('mysql');
 
 var con = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "",
-    database: "eommerce_db"
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_HPASSWORD,
+    database: process.env.DB_DATABSE
 });
 
 module.exports = con;
