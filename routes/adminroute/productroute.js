@@ -4,7 +4,7 @@ const route = express.Router();
 // Export Route
 const ControllerProduct = require('../../controllers/admincontroller/productcontroller');
 
-// Read Page Product
+// Read Product
 route.get('/product', ControllerProduct.PageProduct);
 
 // Create 
