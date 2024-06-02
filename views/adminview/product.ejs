@@ -75,13 +75,6 @@
                 </div>
             </li>
 
-            <!-- Nav Item - Tables -->
-            <li class="nav-item">
-                <a class="nav-link" href="tables.html">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Tables</span></a>
-            </li>
-
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 
@@ -315,7 +308,7 @@
                     </p>
                     <span style="width: 100%; display: flex; justify-content: end; margin-bottom: 5px;">
                         <button style="border: none; padding: 5px 15px; background-color: rgba(39, 165, 165, 0.845); border-radius: 5px; box-shadow: 0px 0px 10px 1px rgba(128, 128, 128, 0.593);">
-                            <a href="/buttoncreateproduct" style="text-decoration: none; font-family: roboto; font-weight: 600; color: #fff;">Add Product</a>
+                            <a href="/product/create" style="text-decoration: none; font-family: roboto; font-weight: 600; color: #fff;">Add Product</a>
                         </button>
                     </span>
                     <!-- DataTales Example -->    
@@ -347,7 +340,30 @@
                                         </tr>
                                     </tfoot>
                                     <tbody>
-                                        
+                                        <% result.forEach(val =>{ %>
+                                            <tr>
+                                                <td><%= val.id %></td>
+                                                <td><%= val.product_name %></td>
+                                                <td><%= val.discription %></td>
+                                                <td><%= val.price %></td>
+                                                <td>
+                                                    <img src="/adminpublic/img/<%= val.image %>" 
+                                                    alt="" width="80px">
+                                                </td>
+                                                <td>
+                                                    <button style="border: none; padding: 2px 23px; background-color: rgba(1, 153, 153, 0.803); border-radius: 5px;">
+                                                        <a href="/product/edit/<%= val.id %>" style="text-decoration: none; color: #fff; font-family: roboto; font-weight: 600;">
+                                                            Edit
+                                                        </a>
+                                                    </button>
+                                                    <button style="border: none; padding: 2px 15px; background-color: rgba(157, 0, 29, 0.803); border-radius: 5px;">
+                                                        <a href="/product/delete/<%= val.id %>" style="text-decoration: none; color: #fff; font-family: roboto; font-weight: 600;">
+                                                            Delete
+                                                        </a>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        <% }) %>
                                     </tbody>
                                 </table>
                             </div>

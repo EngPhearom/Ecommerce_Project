@@ -70,13 +70,6 @@
                 </div>
             </li>
 
-            <!-- Nav Item - Tables -->
-            <li class="nav-item">
-                <a class="nav-link" href="tables.html">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Tables</span></a>
-            </li>
-
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 
@@ -309,12 +302,12 @@
                                 <h6 class="m-0 font-weight-bold text-primary">Product</h6>
                             </div>
                             <div class="card-body">
-                                <form class="user" action="/updateproduct/<%= result[0].id %>" method="post" enctype="multipart/form-data">
+                                <form class="user" action="/product/edit/<%= result[0].id %>" method="post" enctype="multipart/form-data">
                                     <div class="form-group">
-                                        <input type="text" name="panme" value="<%= result[0].product_name %>" class="form-control form-control-user" aria-describedby="" placeholder="Product Name">
+                                        <input type="text" name="pname" value="<%= result[0].product_name %>" class="form-control form-control-user" aria-describedby="" placeholder="Product Name">
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" name="dis" value="<%= result[0].discription%>" class="form-control form-control-user" aria-describedby="" placeholder="Discription">
+                                        <input type="text" name="dis" value="<%= result[0].discription %>" class="form-control form-control-user" aria-describedby="" placeholder="Discription">
                                     </div>
                                     <div class="form-group">
                                         <input type="text" name="price" value="<%= result[0].price %>" class="form-control form-control-user" aria-describedby="" placeholder="Price">
@@ -323,7 +316,7 @@
                                         <input type="file" name="file">
                                     </div>
                                     <button style="width: 100%; padding-top: 7px; padding-bottom: 7px; border: none; background-color: rgba(1, 1, 209, 0.753); color: #fff; font-family: roboto; font-weight: 600; border-radius: 30px;">
-                                        Edit
+                                        Update
                                     </button>
                                     <hr>
                                 </form>
